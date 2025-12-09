@@ -1,14 +1,14 @@
 
 file {
-	name="/home/beams0/2BMB/epics/synApps/support/mctoptics/mctOpticsApp/op/adl/JenaNV100D.adl"
+	name="/home/beams/2BMB/epics/synApps/support/mctoptics/mctOpticsApp/op/adl/JenaNV100dD.adl"
 	version=030111
 }
 display {
 	object {
-		x=1218
-		y=72
+		x=8678
+		y=1255
 		width=250
-		height=220
+		height=440
 	}
 	clr=14
 	bclr=4
@@ -478,6 +478,806 @@ composite {
 			"dynamic attribute" {
 				chan="$(P)$(M2)read.DESC"
 			}
+		}
+	}
+}
+composite {
+	object {
+		x=126
+		y=220
+		width=116
+		height=216
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=126
+				y=220
+				width=116
+				height=20
+			}
+			monitor {
+				chan="$(P1)$(M21).DESC"
+				clr=54
+				bclr=0
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		rectangle {
+			object {
+				x=132
+				y=286
+				width=104
+				height=31
+			}
+			"basic attribute" {
+				clr=60
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="$(P1)$(M21).DMOV"
+			}
+		}
+		rectangle {
+			object {
+				x=132
+				y=286
+				width=104
+				height=31
+			}
+			"basic attribute" {
+				clr=30
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M21).LVIO"
+			}
+		}
+		rectangle {
+			object {
+				x=132
+				y=286
+				width=104
+				height=31
+			}
+			"basic attribute" {
+				clr=14
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M21)_able.VAL"
+			}
+		}
+		rectangle {
+			object {
+				x=126
+				y=317
+				width=116
+				height=40
+			}
+			"basic attribute" {
+				clr=14
+				width=3
+			}
+		}
+		text {
+			object {
+				x=154
+				y=341
+				width=60
+				height=15
+			}
+			"basic attribute" {
+				clr=60
+				fill="outline"
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="$(P1)$(M21).DMOV"
+			}
+			textix="Moving"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=154
+				y=347
+				width=60
+				height=10
+			}
+			"basic attribute" {
+				clr=30
+				fill="outline"
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M21).SET"
+			}
+			textix="Calibrate"
+			align="horiz. centered"
+		}
+		"message button" {
+			object {
+				x=139
+				y=396
+				width=89
+				height=20
+			}
+			control {
+				chan="$(P1)$(M21).STOP"
+				clr=31
+				bclr=20
+			}
+			label="STOP"
+			press_msg="1"
+		}
+		"message button" {
+			object {
+				x=128
+				y=319
+				width=25
+				height=36
+			}
+			control {
+				chan="$(P1)$(M21).TWR"
+				clr=14
+				bclr=51
+			}
+			label="<"
+			press_msg="1"
+		}
+		"text entry" {
+			object {
+				x=154
+				y=319
+				width=60
+				height=20
+			}
+			control {
+				chan="$(P1)$(M21).TWV"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"message button" {
+			object {
+				x=215
+				y=319
+				width=25
+				height=36
+			}
+			control {
+				chan="$(P1)$(M21).TWF"
+				clr=14
+				bclr=51
+			}
+			label=">"
+			press_msg="1"
+		}
+		"text entry" {
+			object {
+				x=135
+				y=289
+				width=98
+				height=25
+			}
+			control {
+				chan="$(P1)$(M21).VAL"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		rectangle {
+			object {
+				x=126
+				y=265
+				width=6
+				height=50
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M21).LLS"
+			}
+		}
+		rectangle {
+			object {
+				x=236
+				y=265
+				width=6
+				height=50
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M21).HLS"
+			}
+		}
+		"text update" {
+			object {
+				x=126
+				y=252
+				width=116
+				height=12
+			}
+			monitor {
+				chan="$(P1)$(M21).EGU"
+				clr=54
+				bclr=3
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		rectangle {
+			object {
+				x=126
+				y=240
+				width=116
+				height=12
+			}
+			"basic attribute" {
+				clr=54
+				width=2
+			}
+		}
+		text {
+			object {
+				x=126
+				y=241
+				width=116
+				height=10
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+			}
+			textix="($(P1)$(M21))"
+			align="horiz. centered"
+		}
+		rectangle {
+			object {
+				x=133
+				y=261
+				width=102
+				height=26
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M21).SET"
+			}
+		}
+		rectangle {
+			object {
+				x=135
+				y=263
+				width=98
+				height=21
+			}
+			"basic attribute" {
+				clr=30
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M21).SET"
+			}
+		}
+		"text update" {
+			object {
+				x=137
+				y=265
+				width=94
+				height=17
+			}
+			monitor {
+				chan="$(P1)$(M21).RBV"
+				clr=54
+				bclr=3
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=154
+				y=339
+				width=60
+				height=10
+			}
+			"basic attribute" {
+				clr=30
+				fill="outline"
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M21).LVIO"
+			}
+			textix="Soft limit"
+			align="horiz. centered"
+		}
+		rectangle {
+			object {
+				x=132
+				y=286
+				width=104
+				height=31
+			}
+			"basic attribute" {
+				clr=20
+				style="dash"
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M21)_able.VAL"
+			}
+		}
+		"choice button" {
+			object {
+				x=140
+				y=357
+				width=89
+				height=20
+			}
+			control {
+				chan="$(P1)$(M21).SET"
+				clr=14
+				bclr=51
+			}
+			stacking="column"
+		}
+		"choice button" {
+			object {
+				x=140
+				y=377
+				width=89
+				height=20
+			}
+			control {
+				chan="$(P1)$(M21)_able.VAL"
+				clr=14
+				bclr=51
+			}
+			stacking="column"
+		}
+		"related display" {
+			object {
+				x=139
+				y=416
+				width=89
+				height=20
+			}
+			display[0] {
+				label="Debug"
+				name="motorx_all.adl"
+				args="P=$(P1), M=$(M21)"
+			}
+			clr=0
+			bclr=18
+			label="-Debug"
+		}
+	}
+}
+composite {
+	object {
+		x=6
+		y=220
+		width=116
+		height=216
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=6
+				y=220
+				width=116
+				height=20
+			}
+			monitor {
+				chan="$(P1)$(M20).DESC"
+				clr=54
+				bclr=0
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		rectangle {
+			object {
+				x=12
+				y=286
+				width=104
+				height=31
+			}
+			"basic attribute" {
+				clr=60
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="$(P1)$(M20).DMOV"
+			}
+		}
+		rectangle {
+			object {
+				x=12
+				y=286
+				width=104
+				height=31
+			}
+			"basic attribute" {
+				clr=30
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M20).LVIO"
+			}
+		}
+		rectangle {
+			object {
+				x=12
+				y=286
+				width=104
+				height=31
+			}
+			"basic attribute" {
+				clr=14
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M20)_able.VAL"
+			}
+		}
+		rectangle {
+			object {
+				x=6
+				y=317
+				width=116
+				height=40
+			}
+			"basic attribute" {
+				clr=14
+				width=3
+			}
+		}
+		text {
+			object {
+				x=34
+				y=341
+				width=60
+				height=15
+			}
+			"basic attribute" {
+				clr=60
+				fill="outline"
+			}
+			"dynamic attribute" {
+				vis="if zero"
+				chan="$(P1)$(M20).DMOV"
+			}
+			textix="Moving"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=34
+				y=347
+				width=60
+				height=10
+			}
+			"basic attribute" {
+				clr=30
+				fill="outline"
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M20).SET"
+			}
+			textix="Calibrate"
+			align="horiz. centered"
+		}
+		"message button" {
+			object {
+				x=20
+				y=396
+				width=89
+				height=20
+			}
+			control {
+				chan="$(P1)$(M20).STOP"
+				clr=31
+				bclr=20
+			}
+			label="STOP"
+			press_msg="1"
+		}
+		"message button" {
+			object {
+				x=8
+				y=319
+				width=25
+				height=36
+			}
+			control {
+				chan="$(P1)$(M20).TWR"
+				clr=14
+				bclr=51
+			}
+			label="<"
+			press_msg="1"
+		}
+		"text entry" {
+			object {
+				x=34
+				y=319
+				width=60
+				height=20
+			}
+			control {
+				chan="$(P1)$(M20).TWV"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"message button" {
+			object {
+				x=95
+				y=319
+				width=25
+				height=36
+			}
+			control {
+				chan="$(P1)$(M20).TWF"
+				clr=14
+				bclr=51
+			}
+			label=">"
+			press_msg="1"
+		}
+		"text entry" {
+			object {
+				x=15
+				y=289
+				width=98
+				height=25
+			}
+			control {
+				chan="$(P1)$(M20).VAL"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		rectangle {
+			object {
+				x=6
+				y=265
+				width=6
+				height=50
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M20).LLS"
+			}
+		}
+		rectangle {
+			object {
+				x=116
+				y=265
+				width=6
+				height=50
+			}
+			"basic attribute" {
+				clr=20
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M20).HLS"
+			}
+		}
+		"text update" {
+			object {
+				x=6
+				y=252
+				width=116
+				height=12
+			}
+			monitor {
+				chan="$(P1)$(M20).EGU"
+				clr=54
+				bclr=3
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		rectangle {
+			object {
+				x=6
+				y=240
+				width=116
+				height=12
+			}
+			"basic attribute" {
+				clr=54
+				width=2
+			}
+		}
+		text {
+			object {
+				x=6
+				y=241
+				width=116
+				height=10
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+			}
+			textix="($(P1)$(M20))"
+			align="horiz. centered"
+		}
+		rectangle {
+			object {
+				x=13
+				y=261
+				width=102
+				height=26
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M20).SET"
+			}
+		}
+		rectangle {
+			object {
+				x=15
+				y=263
+				width=98
+				height=21
+			}
+			"basic attribute" {
+				clr=30
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M20).SET"
+			}
+		}
+		"text update" {
+			object {
+				x=17
+				y=265
+				width=94
+				height=17
+			}
+			monitor {
+				chan="$(P1)$(M20).RBV"
+				clr=54
+				bclr=3
+			}
+			align="horiz. centered"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=34
+				y=339
+				width=60
+				height=10
+			}
+			"basic attribute" {
+				clr=30
+				fill="outline"
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M20).LVIO"
+			}
+			textix="Soft limit"
+			align="horiz. centered"
+		}
+		rectangle {
+			object {
+				x=12
+				y=286
+				width=104
+				height=31
+			}
+			"basic attribute" {
+				clr=20
+				style="dash"
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				vis="if not zero"
+				chan="$(P1)$(M20)_able.VAL"
+			}
+		}
+		"choice button" {
+			object {
+				x=20
+				y=357
+				width=89
+				height=20
+			}
+			control {
+				chan="$(P1)$(M20).SET"
+				clr=14
+				bclr=51
+			}
+			stacking="column"
+		}
+		"choice button" {
+			object {
+				x=20
+				y=377
+				width=89
+				height=20
+			}
+			control {
+				chan="$(P1)$(M20)_able.VAL"
+				clr=14
+				bclr=51
+			}
+			stacking="column"
+		}
+		"related display" {
+			object {
+				x=20
+				y=416
+				width=89
+				height=20
+			}
+			display[0] {
+				label="Debug"
+				name="motorx_all.adl"
+				args="P=$(P1), M=$(M20)"
+			}
+			clr=0
+			bclr=18
+			label="-Debug"
 		}
 	}
 }
