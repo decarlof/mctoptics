@@ -1,6 +1,6 @@
 
 file {
-	name="/home/beams/2BMB/epics/synApps/support/mctoptics/mctOpticsApp/op/adl/JenaNV100dD.adl"
+	name="/home/beams/2BMB/epics/synApps/support/mctoptics/mctOpticsApp/op/adl/JenaNV100D.adl"
 	version=030111
 }
 display {
