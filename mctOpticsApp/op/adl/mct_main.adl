@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=2144
-		y=246
+		x=2124
+		y=230
 		width=1750
 		height=910
 	}
@@ -9577,4 +9577,16 @@ text {
 		clr=14
 	}
 	textix="Minutes"
+}
+text {
+	object {
+		x=1100
+		y=208
+		width=150
+		height=15
+	}
+	"basic attribute" {
+		clr=20
+	}
+	textix="$(AD1)$(AD1_CAM)"
 }
