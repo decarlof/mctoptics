@@ -183,7 +183,7 @@ class MCTOptics():
         if bin_x == 1 or bin_x == 2 or bin_x == 4:
             self.epics_pvs['Cam'+camera_id+'BinY'].put(bin_x, wait=True)
             self.epics_pvs['CameraBinning'].put(int(np.log2(bin_x)))
-            log.info('mctOptics: Set camera %s binning to %d', camera_id, self.epics_pvs['CameraBinning'].get(as_string=True))
+            log.info('mctOptics: Set camera %s binning to %s', camera_id, self.epics_pvs['CameraBinning'].get(as_string=True))
 
         # if the camera was collecting images start it again
         if camera_acquire == 1:
