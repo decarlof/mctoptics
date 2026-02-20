@@ -1,12 +1,12 @@
 
 file {
-	name="/home/beams0/2BMB/epics/synApps/support/mctoptics/mctOpticsApp/op/adl/mct_main.adl"
+	name="/home/beams/2BMB/epics/synApps/support/mctoptics/mctOpticsApp/op/adl/mct_main.adl"
 	version=030111
 }
 display {
 	object {
-		x=2124
-		y=230
+		x=1102
+		y=279
 		width=1750
 		height=910
 	}
@@ -454,9 +454,9 @@ composite {
 }
 "related display" {
 	object {
-		x=1439
+		x=1510
 		y=376
-		width=119
+		width=50
 		height=20
 	}
 	display[0] {
@@ -466,7 +466,7 @@ composite {
 	}
 	clr=14
 	bclr=51
-	label="-Update"
+	label="-Help"
 }
 rectangle {
 	object {
@@ -726,7 +726,7 @@ text {
 }
 text {
 	object {
-		x=1286
+		x=1266
 		y=375
 		width=150
 		height=20
@@ -9589,4 +9589,19 @@ text {
 		clr=20
 	}
 	textix="$(AD1)$(AD1_CAM)"
+}
+"shell command" {
+	object {
+		x=1438
+		y=376
+		width=70
+		height=20
+	}
+	command[0] {
+		label="dmagic"
+		name="bash /home/beams/2BMB/bin/dmagic.sh &"
+	}
+	clr=14
+	bclr=32
+	label="- Update"
 }
