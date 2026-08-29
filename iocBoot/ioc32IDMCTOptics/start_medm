@@ -1,0 +1,32 @@
+#!/bin/csh
+
+# TODO_32ID: adjust these paths to the 32-ID installation
+setenv EPICS_APP_32IDTS TODO_32ID_TOMOSCAN_REPO_PATH
+setenv EPICS_APP_32ID   TODO_32ID_SYNAPPS_IOC_PATH
+setenv EPICS_APP_SPINNAKER /APSshare/epics/synApps_6_3/support/areaDetector-R3-14/ADSpinnaker
+setenv EPICS_APP_GENICAM   /APSshare/epics/synApps_6_3/support/areaDetector-R3-14/ADGenICam
+setenv EPICS_APP_AD        /APSshare/epics/synApps_6_3/support/areaDetector-R3-14/ADCore
+
+set output = `perl $EPICS_APP_32ID/release.pl $EPICS_APP_32ID`
+$output
+
+#####################
+# prepare MEDM path
+#
+if (! ${?EPICS_DISPLAY_PATH}) setenv EPICS_DISPLAY_PATH '.'
+setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_SPINNAKER/spinnakerApp/op/adl
+setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_GENICAM/GenICamApp/op/adl
+setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_AD/ADApp/op/adl
+setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$SUPPORT/all_adl
+setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_32IDTS/tomoScanApp/op/adl
+
+# Motor macros map the mctOptics.adl parameter names (M10, M12..M16) to the
+# 32-ID motor numbers listed in mctOptics.substitutions.
+#   M10 = Lens Selector    (32idc02:m9)
+#   M12 = Focus lens 2     (32idc02:m11)
+#   M13 = Focus lens 3     (32idc02:m12)
+#   M14 = Cam Selector     (32idc02:m13)
+#   M15 = Camera 1 rot     (32idc02:m14)
+#   M16 = Camera 2 rot     (32idc02:m15)
+# TS / TS_R = tomoScan PV prefix — fill in once 32-ID's tomoScan instance is decided.
+medm -x -macro "P=32id:,R=MCTOptics:,P1=32idc02:,M12=m11,M13=m12,M14=m13,M15=m14,M16=m15,M10=m9,TS=TODO_32ID_TS,TS_R=TODO_32ID_TS_R" ../../mctOpticsApp/op/adl/mctOptics.adl &
