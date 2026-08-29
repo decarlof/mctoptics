@@ -1,24 +1,24 @@
 #!/bin/csh
 
 # TODO_32ID: adjust these paths to the 32-ID installation
-setenv EPICS_APP_32IDTS TODO_32ID_TOMOSCAN_REPO_PATH
-setenv EPICS_APP_32ID   TODO_32ID_SYNAPPS_IOC_PATH
-setenv EPICS_APP_SPINNAKER /APSshare/epics/synApps_6_3/support/areaDetector-R3-14/ADSpinnaker
-setenv EPICS_APP_GENICAM   /APSshare/epics/synApps_6_3/support/areaDetector-R3-14/ADGenICam
-setenv EPICS_APP_AD        /APSshare/epics/synApps_6_3/support/areaDetector-R3-14/ADCore
+# setenv EPICS_APP_32IDTS TODO_32ID_TOMOSCAN_REPO_PATH
+# setenv EPICS_APP_32ID   TODO_32ID_SYNAPPS_IOC_PATH
+# setenv EPICS_APP_SPINNAKER /APSshare/epics/synApps_6_3/support/areaDetector-R3-14/ADSpinnaker
+# setenv EPICS_APP_GENICAM   /APSshare/epics/synApps_6_3/support/areaDetector-R3-14/ADGenICam
+# setenv EPICS_APP_AD        /APSshare/epics/synApps_6_3/support/areaDetector-R3-14/ADCore
 
-set output = `perl $EPICS_APP_32ID/release.pl $EPICS_APP_32ID`
-$output
+# # set output = `perl $EPICS_APP_32ID/release.pl $EPICS_APP_32ID`
+# # $output
 
-#####################
-# prepare MEDM path
-#
-if (! ${?EPICS_DISPLAY_PATH}) setenv EPICS_DISPLAY_PATH '.'
-setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_SPINNAKER/spinnakerApp/op/adl
-setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_GENICAM/GenICamApp/op/adl
-setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_AD/ADApp/op/adl
-setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$SUPPORT/all_adl
-setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_32IDTS/tomoScanApp/op/adl
+# #####################
+# # prepare MEDM path
+# #
+# if (! ${?EPICS_DISPLAY_PATH}) setenv EPICS_DISPLAY_PATH '.'
+# setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_SPINNAKER/spinnakerApp/op/adl
+# setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_GENICAM/GenICamApp/op/adl
+# setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_AD/ADApp/op/adl
+# setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$SUPPORT/all_adl
+#setenv EPICS_DISPLAY_PATH $EPICS_DISPLAY_PATH':'$EPICS_APP_32IDTS/tomoScanApp/op/adl
 
 # Motor macros map the mctOptics.adl parameter names (M10, M12..M16) to the
 # 32-ID motor numbers listed in mctOptics.substitutions.
