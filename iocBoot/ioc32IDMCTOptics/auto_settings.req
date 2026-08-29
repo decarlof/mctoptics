@@ -1,0 +1,2 @@
+file "mctOptics.req", P=$(P), R=$(R)
+file "mctOptics_settings.req", P=$(P), R=$(R)

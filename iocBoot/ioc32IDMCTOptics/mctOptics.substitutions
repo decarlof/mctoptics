@@ -1,0 +1,8 @@
+file "$(TOP)/db/mctOptics.template"
+{
+pattern
+{  P,      R,          CAMERA_MOTOR,  LENS_MOTOR,   TOMOSCAN,           CAMERA0,        CAMERA1,        OVERLAY0,               OVERLAY1,               CAMERA_POS0, CAMERA_POS1, CAM0_LENS_POS0, CAM0_LENS_POS1, CAM0_LENS_POS2, CAM1_LENS_POS0, CAM1_LENS_POS1, CAM1_LENS_POS2, LENS_SAMPLE_X,  LENS_SAMPLE_Y,  LENS_SAMPLE_Z,  CAM0_ROT,     CAM1_ROT,     FILE_PLUGIN0,           FILE_PLUGIN1,           LENS0_FOCUS,  LENS1_FOCUS,  LENS2_FOCUS,  PVA_PLUGIN0,            ROI_PLUGIN0,            CB_PLUGIN0,             PVA_PLUGIN1,            ROI_PLUGIN1,            CB_PLUGIN1}
+# Lens positions are mechanically identical for both cameras: CAM0_LENS_POSn == CAM1_LENS_POSn
+# All TODO_32ID_* values must be filled in before starting the IOC; POS values are calibrated with beam
+{  32id:,  MCTOptics:, 32idc02:m13,   32idc02:m9,   TODO_32ID_TOMOSCAN, TODO_32ID_CAM0, TODO_32ID_CAM1, TODO_32ID_CAM0:Over1:, TODO_32ID_CAM1:Over1:, TODO_POS0,   TODO_POS1,   TODO_LENS0,     TODO_LENS1,     TODO_LENS2,     TODO_LENS0,     TODO_LENS1,     TODO_LENS2,     TODO_32ID_SX,   TODO_32ID_SY,   TODO_32ID_SZ,   32idc02:m14,  32idc02:m15,  TODO_32ID_CAM0:HDF1:,   TODO_32ID_CAM1:HDF1:,   32idc02:m10,  32idc02:m11,  32idc02:m12,  TODO_32ID_CAM0:Pva1:,   TODO_32ID_CAM0:ROI1:,   TODO_32ID_CAM0:CB1:,    TODO_32ID_CAM1:Pva1:,   TODO_32ID_CAM1:ROI1:,   TODO_32ID_CAM1:CB1:}
+}
