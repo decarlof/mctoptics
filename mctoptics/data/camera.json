@@ -19,5 +19,8 @@
     },
     "ADIMEC": {
         "detector_pixel_size": 5.5
+    },
+    "Kinetix": {
+        "detector_pixel_size": 6.5
     }
 }
